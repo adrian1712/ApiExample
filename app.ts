@@ -5,9 +5,10 @@ import * as logger from 'morgan';
 import * as cookieParser from 'cookie-parser';
 import * as bodyParser from 'body-parser';
 import * as ejs from 'ejs';
+import * as mongoose from 'mongoose';
 
-import routes from './routes/index';
-import users from './routes/users';
+import manufactures from './api/manufactureApi';
+
 
 let app = express();
 
@@ -26,8 +27,7 @@ app.use('/bower_components', express.static(path.join(__dirname, 'bower_componen
 app.use('/ngApp', express.static(path.join(__dirname, 'ngApp')));
 app.use('/api', express.static(path.join(__dirname, 'api')));
 
-app.use('/', routes);
-app.use('/users', users);
+app.use('/api/manufactures', manufactures)
 
 
 // redirect 404 to home for the sake of AngularJS client-side routes
