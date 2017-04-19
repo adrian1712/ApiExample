@@ -11,7 +11,7 @@ router.post('/', (req, res) => {
     let manufacture = new Manufacture();
     manufacture.name = req.body.name;
     manufacture.country = req.body.country;
-    manufacture.cars = req.body.car;
+    manufacture.cars = req.body.cars;
     manufacture.save().then((savedManufactures) => res.json(savedManufactures));
 })
 

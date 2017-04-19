@@ -9,7 +9,7 @@ import * as mongoose from 'mongoose';
 
 import manufactures from './api/manufactureApi';
 
-const CONNECTION_STRING = 'mongodb://<cars>:<cars12>@ds161410.mlab.com:61410/cars';
+const CONNECTION_STRING = 'mongodb://cars:cars12@ds161410.mlab.com:61410/cars';
 
 mongoose.connect(CONNECTION_STRING)
   .then(() => console.log('connection established'))
@@ -32,7 +32,7 @@ app.use('/bower_components', express.static(path.join(__dirname, 'bower_componen
 app.use('/ngApp', express.static(path.join(__dirname, 'ngApp')));
 app.use('/api', express.static(path.join(__dirname, 'api')));
 
-app.use('/api/manufactures', manufactures)
+app.use('/api/v1/manufactures', manufactures)
 
 
 // redirect 404 to home for the sake of AngularJS client-side routes
