@@ -4,12 +4,13 @@ import {Car} from './cars';
 
 export interface Manufacture extends mongoose.Document {
   name: string;
+  country: string;
   cars: Car[]
 }
 
 let manufactureSchema = new mongoose.Schema({
     name: String,
-    popularity: String,
+    country: String,
     cars: [CarModel]
 
 })

@@ -9,6 +9,11 @@ import * as mongoose from 'mongoose';
 
 import manufactures from './api/manufactureApi';
 
+const CONNECTION_STRING = 'mongodb://<cars>:<cars12>@ds161410.mlab.com:61410/cars';
+
+mongoose.connect(CONNECTION_STRING)
+  .then(() => console.log('connection established'))
+  .catch((err) => console.log(err));
 
 let app = express();
 
